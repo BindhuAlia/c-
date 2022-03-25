@@ -1,0 +1,21 @@
+#include<bits/stdc++.h> 
+using namespace std;
+int main()
+{
+	int n;//length of array
+	cin>>n;
+	int arr[n]//array with length n
+
+	//to read elements
+	for(int i=0;i<n;i++)cin>>arr[i];
+
+	//to print elements
+	for(int i=0;i<n;i++)cout<<arr[i];
+
+	//sorting an array
+	sort(arr,arr+n);
+  
+  //accessing elements from an array
+  cout<<arr[2];
+  return 0;
+}
