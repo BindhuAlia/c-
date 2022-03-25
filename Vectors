@@ -1,0 +1,66 @@
+#include<bits/stdc++.h> 
+using namespace std;
+int main()
+{
+	int n;
+	cin>>n;
+	vector<int>ds(n,10);//fills all elements till n with 10
+	
+	// I/O operations in vectors
+
+	for(int i=0;i<n;i++)
+	{
+		int x;
+		cin>>x;
+		ds.push_back(x);
+	}
+
+	for(int i=0;i<ds.size();i++)
+	{
+		cout<<ds[i];
+	}
+	
+	for(vector<int> i=ds.begin();i!=ds.end();i++)//iterating on addresses
+	{
+		cout<<*i;
+	}
+
+	//vec.begin() -- begins with 1st ele and goes upto last ele
+	//vec.end() -- points to after end element eg =[1,2,3,4,5] vec.end() points to ele after 5
+
+	for(auto i:ds)
+	{
+		cout<<i;
+	}
+
+	// sorting a vector
+
+	sort(ds.begin(),ds.end());//sorts in ascending order
+	sort(ds.begin(),ds.end(),greater<int>());//sorts in decending order
+	
+	//finding an element in a vector
+	auto it= find(ds.begin(),ds.end(),target);	
+
+	//to find lower bound
+	int l=lower_bound(ds.begin(),ds.end(),x)-ds.begin()
+
+	//pops last element
+	vet.pop();
+	
+	//swaping 2 vectors
+	v1.swap(v2);
+
+	//to erase all values
+	ds.clear();
+
+	//to check whether an element is in vector or not
+	ds.empty();
+
+	//erase in vectors
+	ds.erase(ds.begin())//removes the first value
+	ds.erase(ds.begin()+1)//removes the first value
+	ds.erase(ds.begin()+1,ds.begin()+4)//removes values from 1st index to 4-1 index
+
+	ds.insert(ds.begin(),300)//inserts 300 in 0th position
+
+}
