@@ -1,0 +1,18 @@
+#include<bits/stdc++.h> 
+int main()
+{
+	int a;
+	long long int a1;
+	float b;
+	double float h;
+	char ch;
+	bool d=true/false;
+	string s="hello";
+  
+  //declaration of array
+	int arr[100]={1,2,3,--,100}; // stores 100 homogeneous elements (static in nature)
+	
+  //declaration of vector
+	vector<int>v;//can push any elements without limit
+  
+  }
