@@ -60,3 +60,5 @@ int main()
 	cout<<endl;
 	for(auto ii=ms.begin();ii!=ms.end();ii++)
 	cout<<" "<<*ii;
+	return 0;
+	}
