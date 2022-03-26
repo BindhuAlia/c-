@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+  stack<int>st;// creation of stack
+  
+  //insertion of ele into stack
+	st.push(1);
+	st.push(3);
+	st.push(6);
+	st.emplace(7);
+	
+  //to get the top element
+	cout<<"top is"<<st.top()<<endl;
+  
+  //to remove an element
+	st.pop();
+  
+  //to get size of stack
+	cout<<"size"<<st.size()<<endl;
+  
+  //to check whether a stack is empty or not
+	cout<<"empty"<<st.empty();
+	stack<int>s2;
+  
+  //to swap two stacks
+	st.swap(s2);
