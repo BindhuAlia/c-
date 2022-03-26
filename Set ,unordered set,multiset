@@ -1,0 +1,62 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    std::set<int>s;//creation of set (by default it stores ele in a sorted manner)
+
+	// inserting ele into set
+    s.insert(5);
+    s.insert(2);
+    s.insert(3);
+    s.insert(7);
+    s.insert(9);
+    s.emplace(55);//prefer this
+
+	for(auto it=s.begin();it!=s.end();it++)
+	cout<<" "<<*it;
+	cout<<endl;
+
+	//finds the element
+    auto it=s.find(5);
+    cout<<*(it);
+
+	//to count no of elements
+	int c=s.count(5);
+	cout<<endl<<c<<endl;
+
+	// to remove a particular element
+	s.erase(5);
+
+	//to print a set
+	for(auto it: s)
+	cout<<" "<<it;
+    
+	//unordered set
+	unordered_set<int>us;
+	s.insert(5);
+    s.insert(2);
+    s.insert(3);
+    s.insert(1);
+    s.insert(9);
+    s.emplace(55);
+	cout<<endl;
+
+	for(auto i=s.begin();i!=s.end();i++)
+	cout<<" "<<*i;
+
+	//multiset(can store duplicates)
+	multiset<int>ms;
+	ms.insert(5);
+    ms.insert(2);
+    ms.insert(3);
+	ms.emplace(5);
+	cout<<endl;
+	for(auto ii=ms.begin();ii!=ms.end();ii++)
+	cout<<" "<<*ii;
+
+	ms.erase(5);//erases all ele
+	cout<<endl;
+	for(auto ii=ms.begin();ii!=ms.end();ii++)
+	cout<<" "<<*ii;
