@@ -1,0 +1,78 @@
+#include <algorithm>
+#include <iostream>
+#include <vector>
+
+using namespace std;
+/*void display1(int count,int n)
+{
+	if (count>n)return;
+	cout<<"star"<<endl;
+	display1(count+1,n);
+}
+
+void display(int x,int n)
+{
+	if(x>n)return ;
+	cout<<x<<endl;
+	display(x+1,n);
+}
+void display2(int x,int n)
+{
+	if(x<n)return ;
+	cout<<x<<endl;
+	display2(x-1,n);
+}
+int main()
+{
+	display1(1,5);
+	cout<<endl;
+	display(1,5);
+	cout<<endl;
+	display2(5,1);
+}*/
+/*void backtrac(int n)
+{
+	if(n==0)return;
+	backtrac(n-1);
+	cout<<n;
+	cout<<endl;
+}
+int main()
+{
+	backtrac(5);
+	
+}*/
+void summ(int n,int sum)
+{
+	
+	if(n==0)
+	{
+		cout<<sum;
+		return ;
+	}
+	sum+=n%10;
+	summ(n/10,sum);
+}
+int bsum(int s)
+{
+	if(s==0)return 0;
+	return s%10 + bsum(s/10);
+
+}
+int bcount(int num)
+{
+	
+	if(num==0)return 0;
+	return 1+bcount(num/10);
+	
+}
+int main()
+{
+	int sum=0;
+	cout<<endl;
+	summ(1257,sum);
+	cout<<endl;
+	cout<<bsum(1256);
+	cout<<endl;
+	cout<<bcount(1234);
+}
