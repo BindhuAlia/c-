@@ -1,0 +1,33 @@
+#include <iostream.h>
+#include <vector>
+using namespace std;
+void subseq(int ind, int n, vector<int>&ds, int arr[])
+{
+	if(ind==n)
+	{
+		for(auto it:ds)cout<<it<<" ";
+		cout<<endl;
+		return;
+	}
+
+
+//logic to make a pick
+ds.push_back(arr[ind]);
+subseq(ind+1,n,ds,arr);
+ds.pop_back();
+
+//logic to not make a pick
+subseq(ind+1,n,ds,arr);
+}
+
+int main() {
+	int n;
+	cin>>n;
+	int arr[n];
+	for(int i=0;i<n;i++)cin>>arr[i];
+	vector<int>ds;
+	subseq(0,n,ds,arr);
+
+
+	return 0;
+}
