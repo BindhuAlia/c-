@@ -1,0 +1,29 @@
+#include <algorithm>
+#include <iostream>
+#include <vector>
+
+using namespace std;
+void display(int st[],int top)
+{
+	for(int i=0;i<=top;i++)cout<<st[i]<<" ";
+}
+int main() {
+	int st[100],n,top=0;
+	cin>>n;
+	int arr[n];
+	for(int i=0;i<n;i++)cin>>arr[i];
+	st[0]=arr[0];
+	for(int i=1;i<n;i++)
+	{
+		if(st[top]==arr[i])continue;
+		else 
+		{
+			top++;
+			st[top]=arr[i];
+		}
+	}
+	display(st,top);
+
+
+	return 0;
+}
