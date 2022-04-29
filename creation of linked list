@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+struct Node{
+	int data;
+	Node *next;
+};
+void display(Node *head)
+{
+	Node *temp = head;
+	while(temp)//(temp ->next !=NULL)--[doesnt print the last  node]
+	{
+		cout<<temp->data<<" ";
+		temp=temp->next;
+	}
+}
+int main() {
+	Node *head = new Node();
+	Node *first = new Node();
+	Node *second = new Node();
+	//assign data
+	head -> data=10;
+
+	//connect two nodes
+	head -> next=first;
+	first -> data=20;
+	first -> next=second;
+	second -> data=30;
+	display(head);
+	return 0;
+}
