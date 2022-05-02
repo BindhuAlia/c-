@@ -3,7 +3,8 @@ using namespace std;
 
 struct Node{
 	int data;
-	Node* left,right;
+	Node* left;
+	Node* right;
 	Node(int x)
 	{
 		data=x;
@@ -13,8 +14,8 @@ struct Node{
 };
 int main() {
 	Node *root=new Node(10);
-	Node *root->left = new Node(20);
-	Node *root->rightt = new Node(30);
-	Node *root->left->right = new Node(40);
+	root->left = new Node(20);
+	root->right = new Node(30);
+	root->left->right = new Node(40);
 	return 0;
 }
