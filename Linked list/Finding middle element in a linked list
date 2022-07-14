@@ -9,6 +9,10 @@ struct Node {
     }
     
 }; */
+
+//using extra space
+
+
 class Solution{
     public:
     /* Should return data of middle node. If linked list is empty, then  -1*/
@@ -24,5 +28,22 @@ class Solution{
         }
         int n=v.size();
         return v[n/2];
+    }
+};
+
+
+//optimized solution
+class Solution{
+    public:
+    int getMiddle(Node *head)
+    {
+        struct Node *low=head;
+        struct Node *high=head;
+        while(high!=NULL and high->next!=NULL)
+        {
+            low=low->next;
+            high=high->next->next;
+        }
+        return low->data;
     }
 };
