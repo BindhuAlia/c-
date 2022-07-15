@@ -1,0 +1,28 @@
+int countNodesinLoop(struct Node *head)
+{
+    Node *low=head;
+    Node *high=head;
+    int c=0,flag=0;
+    while(high!=NULL and high->next!=NULL)
+    {
+        low=low->next;
+        high=high->next->next;
+        if(low==high)
+        {
+            flag=1;
+            low=low->next;
+            c++;
+            break;
+        }
+    }
+    
+    if(flag==1)
+    {
+        while(low!=high)
+        {
+            low=low->next;
+            c++;
+        }
+    }
+    return c;
+}
