@@ -1,0 +1,11 @@
+bool isCircular(Node *head)
+{
+   Node *p=head;
+   while(p)
+   {
+       if(p->next==head)
+       return true;
+       p=p->next;
+   }
+   return false;
+}
