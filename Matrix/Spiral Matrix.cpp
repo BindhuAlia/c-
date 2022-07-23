@@ -1,42 +1,32 @@
-#include<bits/stdc++.h>
-using namespace std;
-int main()
-{
-    int r,c;
-    cin>>r>>c;
-    int m[r][c];
-    for(int i=0;i<r;i++)
+vector<int> spirallyTraverse(vector<vector<int> > matrix, int r, int c) 
     {
-        for(int j=0;j<c;j++)
+        int top=0,down=matrix.size()-1;
+        int left=0,right=matrix[0].size()-1;
+        int d=0;
+        vector<int>v;
+        while(top<=down and left<=right)
         {
-            cin>>m[i][j];
+            if(d==0)
+            {
+                for(int i=left;i<=right;i++)v.push_back(matrix[top][i]);
+                top+=1;
+            }
+            else if(d==1)
+            {
+                for(int i=top;i<=down;i++)v.push_back(matrix[i][right]);
+                right-=1;
+            }
+            else if(d==2)
+            {
+                for(int i=right;i>=left;i--)v.push_back(matrix[down][i]);
+                down-=1;
+            }
+            else if(d==3)
+            {
+                for(int i=down;i>=top;i--)v.push_back(matrix[i][left]);
+                left+=1;
+            }
+            d=(d+1)%4;
         }
+        return v;
     }
-    
-    int top=0,down=r-1,left=0,right=c-1;
-    int d=0;
-    while(top<=down and left<=right)
-    {
-        if(d==0)
-        {
-            for(int i=left;i<=right;i++)cout<<m[top][i]<<" ";
-            top+=1;
-        }
-        else if(d==1)
-        {
-            for(int i=top;i<=down;i++)cout<<m[i][right]<<" ";
-            right-=1;
-        }
-        else if(d==2)
-        {
-            for(int i=right;i>=left;i--)cout<<m[down][i]<<" ";
-            left+=1;
-        }
-        else if(d==3)
-        {
-            for(int i=down;i<=top;i++)cout<<m[i][left]<<" ";
-            down-=1;
-        }
-        d=(d+1)%4;
-    }
-}
