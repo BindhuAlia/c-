@@ -1,0 +1,15 @@
+#include <iostream>  
+using namespace std;  
+char add(int a)  
+{  
+    char i=a;
+    return i;  
+}  
+int main()  
+{  
+ char (*funcptr)(int);  // function pointer declaration  
+ funcptr=add; // funcptr is pointing to the add function  
+ char ch=funcptr(99);  
+ cout <<ch<< endl;  
+  return 0;  
+}  
